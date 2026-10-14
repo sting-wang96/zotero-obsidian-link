@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Zotero Obsidian Link",
+    "version": "1.0.1",
+    "description": "Right-click any item or PDF attachment in Zotero to copy a Markdown link that opens the PDF directly from Obsidian (or any Markdown editor).",
+    "author": "Local",
+    "icons": {
+        "48": "icon48.png",
+        "64": "icon64.png"
+    },
+    "applications": {
+        "zotero": {
+            "id": "obsidian-link@example.com",
+            "update_url": "https://raw.githubusercontent.com/obsidian-link/updates/main/updates.json",
+            "strict_min_version": "8.0.0",
+            "strict_max_version": "10.*"
+        }
+    }
+}
