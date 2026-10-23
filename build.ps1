@@ -52,7 +52,11 @@ $zip = [System.IO.Compression.ZipFile]::Open($xpiPath, [System.IO.Compression.Zi
 
 try {
     $files = Get-ChildItem -Path $projectDir -Recurse -File |
-             Where-Object { $_.Name -ne 'build.ps1' -and $_.Name -ne 'README.md' }
+             Where-Object {
+                 $_.Name -ne 'build.ps1' -and
+                 $_.Name -ne 'README.md' -and
+                 $_.FullName -notmatch '\\\.git\\'
+             }
 
     foreach ($f in $files) {
         $rel = $f.FullName.Substring($projectDir.Length).TrimStart('\','/').Replace('\','/')
